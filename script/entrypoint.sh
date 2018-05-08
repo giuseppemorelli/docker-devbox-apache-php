@@ -2,6 +2,11 @@
 
 set -e
 
+# POSTFIX_var env -> postconf -e var=$POSTFIX_var
+for e in ${!POSTFIX_*} ; do postconf -e "${e:8}=${!e}" ; done
+
+service postfix start
+
 if [ "$APACHE_USER_UID" != false ]; then
     usermod -u $APACHE_USER_UID www-data
 fi

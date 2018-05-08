@@ -7,6 +7,7 @@ VOLUME /etc/apache2/sites-enabled/
 
 ENV APACHE_USER_UID     33
 ENV APACHE_USER_GID     33
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -y update \
     && apt-get -y install \
@@ -27,6 +28,7 @@ RUN apt-get -y update \
     php7.0-xdebug \
     php7.0-soap \
     php7.0-bcmath \
+    postfix \
     && apt-get clean \
     && rm -rf \
     /var/lib/apt/lists/* \
@@ -45,6 +47,12 @@ COPY php/7.0/mods-available/xdebug.ini /etc/php/7.0/mods-available/xdebug.ini
 RUN a2enmod rewrite \
     && a2enmod vhost_alias \
     && a2enmod ssl
+
+ENV \
+  POSTFIX_myhostname=hostname \
+  POSTFIX_mydestination=localhost \
+  POSTFIX_mynetworks=0.0.0.0/0 \
+  POSTFIX_relayhost=''
 
 EXPOSE 80
 EXPOSE 443
