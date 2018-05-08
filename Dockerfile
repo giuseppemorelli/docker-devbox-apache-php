@@ -29,6 +29,7 @@ RUN apt-get -y update \
     php7.0-soap \
     php7.0-bcmath \
     postfix \
+    wget \
     && apt-get clean \
     && rm -rf \
     /var/lib/apt/lists/* \
