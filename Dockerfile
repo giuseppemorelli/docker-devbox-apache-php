@@ -12,6 +12,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update \
     && apt-get -y install \
     apache2 \
+    git \
     php7.0 \
     php7.0-cli \
     php7.0-curl \
