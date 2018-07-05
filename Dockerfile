@@ -39,6 +39,7 @@ RUN apt-get -y update \
     php7.1-soap \
     php7.1-bcmath \
     postfix \
+    unzip \
     && apt-get clean \
     && rm -rf \
     /var/lib/apt/lists/* \
