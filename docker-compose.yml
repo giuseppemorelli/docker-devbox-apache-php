@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+    web:
+        container_name: yourproject_apache
+        image: gmdotnet/devbox-apache-php:7.0
+
+        ports:
+            - "80:80"
+
+        environment:
+
+            APACHE_USER_UID: 1000
+            APACHE_USER_GID: 1000
+
+            POSTFIX_myhostname: yourproject.local
+            POSTFIX_mydestination: yourproject.local
+            POSTFIX_relayhost: <smtp or mailhog-ip>:1025
+
+            XDEBUG_CONFIG: remote_host=172.16.244.1
+
+        volumes:
+            - /your/project/folder:/var/www/html/
+
+        working_dir: /var/www/
+
+networks:
+    yourproject_default_net:
+        driver: bridge
+        driver_opts:
+            com.docker.network.enable_ipv6: "false"
+        ipam:
+            driver: default
+            config:
+            - subnet: 172.16.244.0/24
