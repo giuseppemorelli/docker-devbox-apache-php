@@ -9,7 +9,7 @@ Dockerfile to have a development/production environment for Apache + PHP.
 You can run this command in your terminal or use `docker-compose` example file.
 
 ```bash
-docker run -d --name devbox-apache-php -p 80:80 gmdotnet/devbox-apache-php:7.0 -v <your html project full path>:/var/www/html/
+docker run -d --name devbox-apache-php -p 80:80 giuseppemorelli/devbox-apache-php:7.2 -v <your html project full path>:/var/www/html/
 ```
 
 
@@ -51,6 +51,7 @@ Each branch has own version of php and kind of use (development and production)
 | PHP 7.0 | php-7.0            | development |
 | PHP 7.0 | php-7.0-production | production  |
 | PHP 7.1 | php-7.1            | development |
+| PHP 7.2 | php-7.2            | development |
 
 
 
