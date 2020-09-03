@@ -49,10 +49,10 @@ Each branch has own version of php and kind of use (development and production)
 | ------- | ------------------ | ----------- |
 | PHP 5.6 | php-5.6            | development |
 | PHP 7.0 | php-7.0            | development |
-| PHP 7.0 | php-7.0-production | production  |
 | PHP 7.1 | php-7.1            | development |
 | PHP 7.2 | php-7.2            | development |
-
+| PHP 7.3 | php-7.3            | development |
+| PHP 7.4 | php-7.4            | development |
 
 
 ### Notes
