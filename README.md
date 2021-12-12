@@ -1,5 +1,8 @@
 <h1 align="center">Docker Apache + PHP</h1>
 
+![PHP 7.0](https://github.com/giuseppemorelli/docker-php/actions/workflows/php-7.0-debian-stretch.yml/badge.svg)
+
+
 Dockerfile to have a development environment for Apache + PHP.
 
 ## How to use
@@ -41,14 +44,14 @@ In each branch you can find a complete list of the software used.
 
 Each branch has own version of php and kind of use (development and production)
 
-| Version | Subfolder |
-| ------- |-----------|
-| PHP 5.6 | php-5.6   |
-| PHP 7.0 | php-7.0   |
-| PHP 7.1 | php-7.1   |
-| PHP 7.2 | php-7.2   |
-| PHP 7.3 | php-7.3   |
-| PHP 7.4 | php-7.4   |
+| Version | Subfolder       |
+| ------- |-----------------|
+| PHP 5.6 | php-5.6         |
+| PHP 7.0 | php-7.0-debian-stretch |
+| PHP 7.1 | php-7.1         |
+| PHP 7.2 | php-7.2         |
+| PHP 7.3 | php-7.3         |
+| PHP 7.4 | php-7.4         |
 
 
 ### Notes
