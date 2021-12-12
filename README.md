@@ -58,7 +58,7 @@ Each subfolder has own version. Main tag is: `giuseppemorelli/devbox-apache-php`
 | PHP 7.3 | php-7.3-debian-buster  | giuseppemorelli/devbox-apache-php:7.3 |
 | PHP 7.4 | php-7.4-debian-stretch | giuseppemorelli/devbox-apache-php:7.4 |
 
-or check directly on docker hub: (https://hub.docker.com/repository/docker/giuseppemorelli/devbox-apache-php/tags?page=1&ordering=name)[https://hub.docker.com/repository/docker/giuseppemorelli/devbox-apache-php/tags?page=1&ordering=name]
+or check directly on [Docker Hub](https://hub.docker.com/repository/docker/giuseppemorelli/devbox-apache-php/tags?page=1&ordering=name)
 
 ### Notes
 
