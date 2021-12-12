@@ -1,4 +1,4 @@
-name: Build 7.0 on debian stretch
+name: 7.0 on debian stretch
 
 on:
     push:
@@ -8,9 +8,10 @@ on:
 
 env:
     TAG_VERSION: '7.0'
+    FOLDER: './php-7.0-debian-stretch'
 
 jobs:
     build-and-push-docker-image:
         name: "Build 7.0 on push to docker hub"
-        uses: giuseppemorelli/docker-devbox-apache-php/build_and_push.yml@main
+        uses: giuseppemorelli/docker-devbox-apache-php/.github/workflows/build_and_push.yml@main
 
