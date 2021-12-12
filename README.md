@@ -1,7 +1,11 @@
 <h1 align="center">Docker Apache + PHP</h1>
 
+![PHP 5.6](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-5.6-debian-jessie.yml/badge.svg)
 ![PHP 7.0](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.0-debian-stretch.yml/badge.svg)
 ![PHP 7.1](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.1-debian-stretch.yml/badge.svg)
+![PHP 7.2](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.2-debian-stretch.yml/badge.svg)
+![PHP 7.3](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.3-debian-buster.yml/badge.svg)
+![PHP 7.4](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.4-debian-stretch.yml/badge.svg)
 
 
 Dockerfile to have a development environment for Apache + PHP.
@@ -16,13 +20,13 @@ docker run -d --name devbox-apache-php -p 80:80 giuseppemorelli/devbox-apache-ph
 
 ## Environment variables
 
-| Variable name         | Description                                                  | Default Value | Example                  |
-| --------------------- | ------------------------------------------------------------ | ------------- | ------------------------ |
-| APACHE_USER_UID       | User ID for Apache User. Insert in most case your computer user ID | 33            | 1000                     |
-| APACHE_USER_GID       | Group ID for Apache User. Insert in most case your computer group ID | 33            | 1000                     |
-| POSTFIX_myhostname    |                                                              | hostname      | project.local            |
-| POSTFIX_mydestination |                                                              | localhost     | project.local            |
-| POSTFIX_relayhost     | SMTP Host to 'redirect' mails. Used with mailhog service for development | ''            | <mailhog-ip>:1025        |
+| Variable name         | Description                                                                                                                           | Default Value | Example                  |
+| --------------------- |---------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------------------------ |
+| APACHE_USER_UID       | User ID for Apache User. Insert in most case your computer user ID                                                                    | 33            | 1000                     |
+| APACHE_USER_GID       | Group ID for Apache User. Insert in most case your computer group ID                                                                  | 33            | 1000                     |
+| POSTFIX_myhostname    |                                                                                                                                       | hostname      | project.local            |
+| POSTFIX_mydestination |                                                                                                                                       | localhost     | project.local            |
+| POSTFIX_relayhost     | SMTP Host to 'redirect' mails. Used with mailhog service for development                                                              | ''            | <mailhog-ip>:1025        |
 | XDEBUG_CONFIG         | Add extra xdebug configuration.<br />In most cases we have to add the local computer ip with the same network of the docker container | ''            | remote_host=172.16.244.1 |
 
 See [docker-devbox](https://github.com/giuseppemorelli/docker-devbox) for more info
@@ -47,12 +51,12 @@ Each subfolder has own version. Main tag is: `giuseppemorelli/devbox-apache-php`
 
 | Version | Subfolder              | Docker Hub tag                        |
 | ------- |------------------------|---------------------------------------|
-| PHP 5.6 | php-5.6                |                                       |
+| PHP 5.6 | php-5.6-debian.jessie  | giuseppemorelli/devbox-apache-php:5.6 |
 | PHP 7.0 | php-7.0-debian-stretch | giuseppemorelli/devbox-apache-php:7.0 |
 | PHP 7.1 | php-7.1-debian-stretch | giuseppemorelli/devbox-apache-php:7.1 |
-| PHP 7.2 | php-7.2                |                                       |
-| PHP 7.3 | php-7.3                |                                       |
-| PHP 7.4 | php-7.4                |                                       |
+| PHP 7.2 | php-7.2-debian-stretch | giuseppemorelli/devbox-apache-php:7.2 |
+| PHP 7.3 | php-7.3-debian-buster  | giuseppemorelli/devbox-apache-php:7.3 |
+| PHP 7.4 | php-7.4-debian-stretch | giuseppemorelli/devbox-apache-php:7.4 |
 
 or check directly on docker hub: (https://hub.docker.com/repository/docker/giuseppemorelli/devbox-apache-php/tags?page=1&ordering=name)[https://hub.docker.com/repository/docker/giuseppemorelli/devbox-apache-php/tags?page=1&ordering=name]
 
