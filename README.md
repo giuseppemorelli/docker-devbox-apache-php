@@ -1,6 +1,7 @@
 <h1 align="center">Docker Apache + PHP</h1>
 
 ![PHP 7.0](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.0-debian-stretch.yml/badge.svg)
+![PHP 7.1](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.1-debian-stretch.yml/badge.svg)
 
 
 Dockerfile to have a development environment for Apache + PHP.

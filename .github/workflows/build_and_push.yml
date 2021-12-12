@@ -2,15 +2,18 @@ name: Build and push docker image
 
 on:
     workflow_call:
+        inputs:
+            tagversion:
+                required: true
+                type: string
+            folder:
+                required: true
+                type: string
         secrets:
             DOCKERHUB_USERNAME:
                 required: true
             DOCKERHUB_TOKEN:
                 required: true
-
-env:
-    TAG_VERSION: '999'
-    FOLDER: './php'
 
 jobs:
     build-and-push-docker-image:
@@ -32,9 +35,9 @@ jobs:
             -   name: Build and push Docker images
                 uses: docker/build-push-action@v2.7.0
                 with:
-                    context: ${{ env.FOLDER }}
+                    context: ${{ inputs.folder }}
                     tags: |
-                        giuseppemorelli/devbox-apache-php:${{ env.TAG_VERSION }}
+                        giuseppemorelli/devbox-apache-php:${{ inputs.tagversion }}
                     push: ${{ github.ref == 'refs/heads/main' }}
 
             -   name: Image digest
