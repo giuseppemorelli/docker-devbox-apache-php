@@ -1,12 +1,12 @@
 <h1 align="center">Docker Apache + PHP</h1>
 
-![PHP 5.6](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-5.6-debian-jessie.yml/badge.svg)
-![PHP 7.0](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.0-debian-stretch.yml/badge.svg)
-![PHP 7.1](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.1-debian-stretch.yml/badge.svg)
-![PHP 7.2](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.2-debian-stretch.yml/badge.svg)
-![PHP 7.3](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.3-debian-buster.yml/badge.svg)
-![PHP 7.4](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.4-debian-stretch.yml/badge.svg)
-![PHP 8.0](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-8.0-debian-stretch.yml/badge.svg)
+![PHP 5.6](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-5.6-debian.yml/badge.svg)
+![PHP 7.0](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.0-debian.yml/badge.svg)
+![PHP 7.1](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.1-debian.yml/badge.svg)
+![PHP 7.2](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.2-debian.yml/badge.svg)
+![PHP 7.3](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.3-debian.yml/badge.svg)
+![PHP 7.4](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.4-debian.yml/badge.svg)
+![PHP 8.0](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-8.0-debian.yml/badge.svg)
 
 
 Dockerfile to have a development environment for Apache + PHP.
@@ -40,7 +40,7 @@ OS base system is Debian Stretch
 - All major php library
 - postfix
 - xdebug
-- composer
+- composer 2
 
 In each branch you can find a complete list of the software used.
 
@@ -50,15 +50,15 @@ In each branch you can find a complete list of the software used.
 
 Each subfolder has own version. Main tag is: `giuseppemorelli/devbox-apache-php`, then you can choose the tag version from this list
 
-| Version | Subfolder              | Docker Hub tag                        |
-|---------|------------------------|---------------------------------------|
-| PHP 5.6 | php-5.6-debian.jessie  | giuseppemorelli/devbox-apache-php:5.6 |
-| PHP 7.0 | php-7.0-debian-stretch | giuseppemorelli/devbox-apache-php:7.0 |
-| PHP 7.1 | php-7.1-debian-stretch | giuseppemorelli/devbox-apache-php:7.1 |
-| PHP 7.2 | php-7.2-debian-stretch | giuseppemorelli/devbox-apache-php:7.2 |
-| PHP 7.3 | php-7.3-debian-buster  | giuseppemorelli/devbox-apache-php:7.3 |
-| PHP 7.4 | php-7.4-debian-stretch | giuseppemorelli/devbox-apache-php:7.4 |
-| PHP 8.0 | php-8.0-debian-stretch | giuseppemorelli/devbox-apache-php:8.0 |
+| Version | Subfolder      | Docker Hub tag                        |
+|---------|----------------|---------------------------------------|
+| PHP 5.6 | php-5.6-debian | giuseppemorelli/devbox-apache-php:5.6 |
+| PHP 7.0 | php-7.0-debian | giuseppemorelli/devbox-apache-php:7.0 |
+| PHP 7.1 | php-7.1-debian | giuseppemorelli/devbox-apache-php:7.1 |
+| PHP 7.2 | php-7.2-debian | giuseppemorelli/devbox-apache-php:7.2 |
+| PHP 7.3 | php-7.3-debian | giuseppemorelli/devbox-apache-php:7.3 |
+| PHP 7.4 | php-7.4-debian | giuseppemorelli/devbox-apache-php:7.4 |
+| PHP 8.0 | php-8.0-debian | giuseppemorelli/devbox-apache-php:8.0 |
 
 or check directly on [Docker Hub](https://hub.docker.com/repository/docker/giuseppemorelli/devbox-apache-php/tags?page=1&ordering=name)
 

@@ -1,5 +1,4 @@
-# install on debian 9 for problems with lib dependency like libcurl3 (not installable on debian 10 -> we have libcurl4)
-FROM debian:stretch
+FROM debian:bullseye
 
 MAINTAINER Giuseppe Morelli <info@giuseppemorelli.net>
 
@@ -9,17 +8,6 @@ VOLUME /etc/apache2/sites-enabled/
 ENV APACHE_USER_UID     33
 ENV APACHE_USER_GID     33
 ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get -y update \
-    && apt-get -y install \
-    apt-transport-https \
-    ca-certificates \
-    wget
-
-RUN apt-get -y dist-upgrade
-
-RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.gpg" \
-    && sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
 
 RUN apt-get update \
     && apt-get -y install \
@@ -52,6 +40,7 @@ RUN apt-get update \
     postfix \
     rsync \
     unzip \
+    wget \
     && apt-get clean \
     && rm -rf \
     /var/lib/apt/lists/* \

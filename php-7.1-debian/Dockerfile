@@ -22,23 +22,22 @@ RUN apt-get -y update \
     && apt-get -y install \
     apache2 \
     git \
-    php7.2 \
-    php7.2-common \
-    php7.2-cli \
-    php7.2-curl \
-    php7.2-dev \
-    php7.2-gd \
-    php7.2-intl \
-    php7.2-mysql \
-    php7.2-mbstring \
-    php7.2-xml \
-    php7.2-xsl \
-    php7.2-zip \
-    php7.2-json \
-    php7.2-xdebug \
-    php7.2-soap \
-    php7.2-bcmath \
-    php7.2-phpdbg \
+    php7.1 \
+    php7.1-cli \
+    php7.1-curl \
+    php7.1-dev \
+    php7.1-gd \
+    php7.1-intl \
+    php7.1-mcrypt \
+    php7.1-mysql \
+    php7.1-mbstring \
+    php7.1-xml \
+    php7.1-xsl \
+    php7.1-zip \
+    php7.1-json \
+    php7.1-xdebug \
+    php7.1-soap \
+    php7.1-bcmath \
     postfix \
     unzip \
     && apt-get clean \
@@ -53,10 +52,16 @@ RUN apt-get -y update \
 COPY script /opt/script/
 COPY apache2/conf-enabled/* /etc/apache2/conf-enabled/
 COPY apache2/sites-enabled/* /etc/apache2/sites-enabled/
-COPY php/7.2/mods-available/devbox.ini /etc/php/7.2/apache2/conf.d/00-devbox.ini
-COPY php/7.2/mods-available/xdebug.ini /etc/php/7.2/apache2/conf.d/90-xdebug.ini
-COPY php/7.2/mods-available/devbox.ini /etc/php/7.2/cli/conf.d/00-devbox.ini
-COPY php/7.2/mods-available/xdebug.ini /etc/php/7.2/cli/conf.d/90-xdebug.ini
+COPY php/7.1/mods-available/devbox.ini /etc/php/7.1/apache2/conf.d/00-devbox.ini
+COPY php/7.1/mods-available/xdebug.ini /etc/php/7.1/apache2/conf.d/90-xdebug.ini
+COPY php/7.1/mods-available/devbox.ini /etc/php/7.1/cli/conf.d/00-devbox.ini
+COPY php/7.1/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/90-xdebug.ini
+
+## adding composer 2
+RUN cd /tmp/ \
+    && wget https://getcomposer.org/composer.phar \
+    && chmod +x ./composer.phar \
+    && mv ./composer.phar /usr/local/bin/composer
 
 RUN a2enmod rewrite \
     && a2enmod vhost_alias \
