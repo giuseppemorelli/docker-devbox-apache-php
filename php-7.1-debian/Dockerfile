@@ -61,7 +61,8 @@ COPY php/7.1/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/90-xdebug.ini
 RUN cd /tmp/ \
     && wget https://getcomposer.org/composer.phar \
     && chmod +x ./composer.phar \
-    && mv ./composer.phar /usr/local/bin/composer
+    && mv ./composer.phar /usr/local/bin/composer \
+    && composer self-update
 
 RUN a2enmod rewrite \
     && a2enmod vhost_alias \
