@@ -29,6 +29,7 @@ RUN apt-get -y update \
     php7.1-gd \
     php7.1-intl \
     php7.1-mcrypt \
+    php7.1-yaml \
     php7.1-mysql \
     php7.1-mbstring \
     php7.1-xml \
