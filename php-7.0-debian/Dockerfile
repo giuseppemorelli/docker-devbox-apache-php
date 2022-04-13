@@ -51,7 +51,7 @@ COPY php/7.0/mods-available/xdebug.ini /etc/php/7.0/cli/conf.d/90-xdebug.ini
 
 ## adding composer 2
 RUN cd /tmp/ \
-    && wget https://getcomposer.org/composer.phar \
+    && wget https://getcomposer.org/download/latest-2.2.x/composer.phar \
     && chmod +x ./composer.phar \
     && mv ./composer.phar /usr/local/bin/composer \
     && composer self-update

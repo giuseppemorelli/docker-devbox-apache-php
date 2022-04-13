@@ -60,10 +60,10 @@ COPY php/7.1/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/90-xdebug.ini
 
 ## adding composer 2
 RUN cd /tmp/ \
-    && wget https://getcomposer.org/composer.phar \
+    && wget https://getcomposer.org/download/latest-2.2.x/composer.phar \
     && chmod +x ./composer.phar \
     && mv ./composer.phar /usr/local/bin/composer \
-    && composer self-update --2.2
+    && composer self-update
 
 RUN a2enmod rewrite \
     && a2enmod vhost_alias \

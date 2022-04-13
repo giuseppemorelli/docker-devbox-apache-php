@@ -50,7 +50,7 @@ COPY php/apache2/mods-available/xdebug.ini /etc/php5/cli/conf.d/90-xdebug.ini
 
 ## adding composer 1
 RUN cd /tmp/ \
-    && wget https://getcomposer.org/composer.phar \
+    && wget https://getcomposer.org/download/latest-1.x/composer.phar \
     && chmod +x ./composer.phar \
     && mv ./composer.phar /usr/local/bin/composer
 
