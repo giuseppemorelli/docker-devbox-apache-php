@@ -63,7 +63,7 @@ RUN cd /tmp/ \
     && wget https://getcomposer.org/composer.phar \
     && chmod +x ./composer.phar \
     && mv ./composer.phar /usr/local/bin/composer \
-    && composer self-update
+    && composer self-update --2.2
 
 RUN a2enmod rewrite \
     && a2enmod vhost_alias \
