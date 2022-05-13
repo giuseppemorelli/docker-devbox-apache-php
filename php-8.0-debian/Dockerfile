@@ -22,7 +22,7 @@ RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.
     && sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
 
 RUN apt-get update \
-    && apt-get -y install \
+    && apt-get -y install --no-install-recommends \
     apache2 \
     git \
     php8.0 \
@@ -50,8 +50,12 @@ RUN apt-get update \
     php8.0-sockets \
     postfix \
     rsync \
-    unzip \
-    && apt-get clean \
+    unzip
+
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends php8.0-dev
+
+RUN apt-get clean \
     && rm -rf \
     /var/lib/apt/lists/* \
     /tmp/* \
