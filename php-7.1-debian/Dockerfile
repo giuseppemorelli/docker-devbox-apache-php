@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM php:7.1-apache-stretch
 
 MAINTAINER Giuseppe Morelli <info@giuseppemorelli.net>
 
@@ -15,30 +15,30 @@ RUN apt-get -y update \
     ca-certificates \
     wget
 
-RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.gpg" \
-    && sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
+#RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.gpg" \
+#    && sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
 
 RUN apt-get -y update \
     && apt-get -y install \
     apache2 \
     git \
-    php7.1 \
-    php7.1-cli \
-    php7.1-curl \
-    php7.1-dev \
-    php7.1-gd \
-    php7.1-intl \
-    php7.1-mcrypt \
-    php7.1-yaml \
-    php7.1-mysql \
-    php7.1-mbstring \
-    php7.1-xml \
-    php7.1-xsl \
-    php7.1-zip \
-    php7.1-json \
-    php7.1-xdebug \
-    php7.1-soap \
-    php7.1-bcmath \
+#    php7.1 \
+#    php7.1-cli \
+#    php7.1-curl \
+#    php7.1-dev \
+#    php7.1-gd \
+#    php7.1-intl \
+#    php7.1-mcrypt \
+#    php7.1-yaml \
+#    php7.1-mysql \
+#    php7.1-mbstring \
+#    php7.1-xml \
+#    php7.1-xsl \
+#    php7.1-zip \
+#    php7.1-json \
+#    php7.1-xdebug \
+#    php7.1-soap \
+#    php7.1-bcmath \
     postfix \
     unzip \
     && apt-get clean \
