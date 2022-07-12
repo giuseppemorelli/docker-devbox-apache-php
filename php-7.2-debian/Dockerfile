@@ -13,34 +13,23 @@ RUN apt-get -y update \
     && apt-get -y install \
     apt-transport-https \
     ca-certificates \
-    wget
-
-#RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.gpg" \
-#    && sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
+    wget curl
 
 RUN apt-get -y update \
     && apt-get -y install \
     apache2 \
     git \
-#    php7.1 \
-#    php7.1-cli \
-#    php7.1-curl \
-#    php7.1-dev \
-#    php7.1-gd \
-#    php7.1-intl \
-#    php7.1-mcrypt \
-#    php7.1-yaml \
-#    php7.1-mysql \
-#    php7.1-mbstring \
-#    php7.1-xml \
-#    php7.1-xsl \
-#    php7.1-zip \
-#    php7.1-json \
-#    php7.1-xdebug \
-#    php7.1-soap \
-#    php7.1-bcmath \
     postfix \
     unzip \
+    libxml2 \
+    libxml2-dev \
+    zip \
+    libpng-dev \
+    zlib1g-dev \
+    libzip-dev \
+    libxslt-dev \
+    libmcrypt-dev \
+    mcrypt \
     && apt-get clean \
     && rm -rf \
     /var/lib/apt/lists/* \
@@ -50,13 +39,21 @@ RUN apt-get -y update \
     /usr/share/doc \
     /usr/share/doc-base
 
+RUN docker-php-ext-install bcmath soap json mbstring intl gd xsl intl pdo_mysql mysqli xml
+RUN docker-php-ext-configure zip --with-libzip
+RUN docker-php-ext-install zip
+
+RUN pecl install mcrypt
+RUN docker-php-ext-enable mcrypt
+
+
 COPY script /opt/script/
 COPY apache2/conf-enabled/* /etc/apache2/conf-enabled/
 COPY apache2/sites-enabled/* /etc/apache2/sites-enabled/
-COPY php/7.2/mods-available/devbox.ini /etc/php/7.1/apache2/conf.d/00-devbox.ini
-COPY php/7.2/mods-available/xdebug.ini /etc/php/7.1/apache2/conf.d/90-xdebug.ini
-COPY php/7.2/mods-available/devbox.ini /etc/php/7.1/cli/conf.d/00-devbox.ini
-COPY php/7.2/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/90-xdebug.ini
+COPY php/7.2/mods-available/devbox.ini /etc/php/7.2/apache2/conf.d/00-devbox.ini
+COPY php/7.2/mods-available/xdebug.ini /etc/php/7.2/apache2/conf.d/90-xdebug.ini
+COPY php/7.2/mods-available/devbox.ini /etc/php/7.2/cli/conf.d/00-devbox.ini
+COPY php/7.2/mods-available/xdebug.ini /etc/php/7.2/cli/conf.d/90-xdebug.ini
 
 ## adding composer 2
 RUN cd /tmp/ \
