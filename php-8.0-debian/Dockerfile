@@ -1,4 +1,3 @@
-# install on debian 9 for problems with lib dependency like libcurl3 (not installable on debian 10 -> we have libcurl4)
 FROM debian:bullseye
 
 MAINTAINER Giuseppe Morelli <info@giuseppemorelli.net>
