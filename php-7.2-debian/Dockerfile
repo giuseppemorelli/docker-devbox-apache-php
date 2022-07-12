@@ -1,4 +1,4 @@
-FROM php:7.2-apache-stretch
+FROM ubuntu:18.04
 
 MAINTAINER Giuseppe Morelli <info@giuseppemorelli.net>
 
@@ -13,23 +13,33 @@ RUN apt-get -y update \
     && apt-get -y install \
     apt-transport-https \
     ca-certificates \
-    wget curl
+    wget
 
 RUN apt-get -y update \
     && apt-get -y install \
     apache2 \
     git \
+    php-dev \
+    libmcrypt-dev \
+    php-pear \
+    php7.2 \
+    php7.2-cli \
+    php7.2-curl \
+    php7.2-dev \
+    php7.2-gd \
+    php7.2-intl \
+    php7.2-yaml \
+    php7.2-mysql \
+    php7.2-mbstring \
+    php7.2-xml \
+    php7.2-xsl \
+    php7.2-zip \
+    php7.2-json \
+    php7.2-xdebug \
+    php7.2-soap \
+    php7.2-bcmath \
     postfix \
     unzip \
-    libxml2 \
-    libxml2-dev \
-    zip \
-    libpng-dev \
-    zlib1g-dev \
-    libzip-dev \
-    libxslt-dev \
-    libmcrypt-dev \
-    mcrypt \
     && apt-get clean \
     && rm -rf \
     /var/lib/apt/lists/* \
@@ -39,13 +49,8 @@ RUN apt-get -y update \
     /usr/share/doc \
     /usr/share/doc-base
 
-RUN docker-php-ext-install bcmath soap json mbstring intl gd xsl intl pdo_mysql mysqli xml
-RUN docker-php-ext-configure zip --with-libzip
-RUN docker-php-ext-install zip
-
+RUN pecl channel-update pecl.php.net
 RUN pecl install mcrypt
-RUN docker-php-ext-enable mcrypt
-
 
 COPY script /opt/script/
 COPY apache2/conf-enabled/* /etc/apache2/conf-enabled/
