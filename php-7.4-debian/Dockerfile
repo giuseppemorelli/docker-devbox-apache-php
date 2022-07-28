@@ -37,6 +37,7 @@ RUN apt-get update \
     php7.4-dom \
     php7.4-iconv \
     php7.4-sockets \
+    php7.4-yaml \
     postfix \
     rsync \
     unzip \
