@@ -24,6 +24,9 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends \
     apache2 \
     git \
+    php-pear \
+    php-xml \
+    php-dev \
     php8.0 \
     php8.0-common \
     php8.0-cli \
