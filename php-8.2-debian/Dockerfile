@@ -22,6 +22,7 @@ RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
+    apt-utils \
     apache2 \
     git \
     php8.2 \
@@ -48,6 +49,8 @@ RUN apt-get update \
     php8.2-iconv \
     php8.2-sockets \
     php8.2-dev \
+    php8.2-tokenizer \
+    php8.2-phpdbg \
     postfix \
     rsync \
     unzip
