@@ -8,6 +8,7 @@
 ![PHP 7.4](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-7.4-debian.yml/badge.svg)
 ![PHP 8.0](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-8.0-debian.yml/badge.svg)
 ![PHP 8.1](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-8.1-debian.yml/badge.svg)
+![PHP 8.2](https://github.com/giuseppemorelli/docker-devbox-apache-php/actions/workflows/php-8.2-debian.yml/badge.svg)
 
 
 Dockerfile to have a development environment for Apache + PHP.
