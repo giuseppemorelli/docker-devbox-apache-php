@@ -1,4 +1,4 @@
-name: 8.1 on debian
+name: 8.2 on debian
 
 on:
     push:
@@ -8,11 +8,11 @@ on:
 
 jobs:
     build-and-push-docker-image:
-        name: "Build 8.1 on push to docker hub"
+        name: "Build 8.2 on push to docker hub"
         uses: giuseppemorelli/docker-devbox-apache-php/.github/workflows/build_and_push.yml@main
         with:
-            tagversion: '8.1'
-            folder: './php-8.1-debian'
+            tagversion: '8.2'
+            folder: './php-8.2-debian'
         secrets:
             DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
             DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
