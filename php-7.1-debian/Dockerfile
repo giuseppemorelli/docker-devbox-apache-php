@@ -19,7 +19,7 @@ RUN apt-get -y update \
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions zip gd intl mcrypt yaml xsl soap bcmath
+    install-php-extensions zip gd intl mcrypt yaml xsl soap bcmath mysqli pdo_mysql
 
 #RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.gpg" \
 #    && sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
@@ -59,10 +59,10 @@ RUN apt-get -y update \
 COPY script /opt/script/
 COPY apache2/conf-enabled/* /etc/apache2/conf-enabled/
 COPY apache2/sites-enabled/* /etc/apache2/sites-enabled/
-COPY php/7.1/mods-available/devbox.ini /etc/php/7.1/apache2/conf.d/00-devbox.ini
-COPY php/7.1/mods-available/xdebug.ini /etc/php/7.1/apache2/conf.d/90-xdebug.ini
-COPY php/7.1/mods-available/devbox.ini /etc/php/7.1/cli/conf.d/00-devbox.ini
-COPY php/7.1/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/90-xdebug.ini
+COPY php/7.1/mods-available/devbox.ini /usr/local/etc/php/00-devbox.ini
+COPY php/7.1/mods-available/xdebug.ini /usr/local/etc/php/90-xdebug.ini
+#COPY php/7.1/mods-available/devbox.ini /etc/php/7.1/cli/conf.d/00-devbox.ini
+#COPY php/7.1/mods-available/xdebug.ini /etc/php/7.1/cli/conf.d/90-xdebug.ini
 
 ## adding composer 2
 RUN cd /tmp/ \
