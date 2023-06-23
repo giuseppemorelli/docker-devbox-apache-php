@@ -1,4 +1,4 @@
-FROM php:7.1-apache-stretch
+FROM php:7.1-apache-buster
 
 MAINTAINER Giuseppe Morelli <info@giuseppemorelli.net>
 
@@ -13,7 +13,13 @@ RUN apt-get -y update \
     && apt-get -y install \
     apt-transport-https \
     ca-certificates \
-    wget
+    wget \
+    rsync
+
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions zip gd intl mcrypt yaml xsl soap bcmath
 
 #RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.gpg" \
 #    && sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
