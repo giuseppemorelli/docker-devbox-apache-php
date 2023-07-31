@@ -47,6 +47,7 @@ RUN apt-get update \
     php8.1-dom \
     php8.1-iconv \
     php8.1-sockets \
+    php8.1-gmp \
     postfix \
     rsync \
     unzip
