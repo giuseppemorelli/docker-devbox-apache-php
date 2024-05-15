@@ -20,6 +20,10 @@ RUN apt-get -y dist-upgrade
 RUN wget -O "/etc/apt/trusted.gpg.d/php.gpg" "https://packages.sury.org/php/apt.gpg" \
     && sh -c 'echo "deb https://packages.sury.org/php/ bullseye main" > /etc/apt/sources.list.d/php.list'
 
+RUN apt-get install gnupg2 -y
+
+RUN apt-key adv --fetch-keys https://packages.sury.org/php/apt.gpg
+
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
     apt-utils \
@@ -53,7 +57,8 @@ RUN apt-get update \
     php8.2-phpdbg \
     postfix \
     rsync \
-    unzip
+    unzip \
+    ca-certificates
 
 RUN apt-get clean \
     && rm -rf \
