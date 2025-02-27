@@ -52,7 +52,6 @@ RUN apt-get update \
     php8.2-dom \
     php8.2-iconv \
     php8.2-sockets \
-    php8.2-dev \
     php8.2-tokenizer \
     php8.2-phpdbg \
     postfix \
